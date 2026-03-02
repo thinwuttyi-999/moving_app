@@ -3,20 +3,20 @@ Full Stack Movie Website using React + Node.js + MySQL
 
 # Features
 -User Login & Register
-_Movie List with Pagination
-_Admin Dashboard
+-Movie List with Pagination
+-Admin Dashboard
 
 # Tech Stack
 -React
 -Node.js
 -Express
-_MySQL
+-MySQL
 
 # How To Run
 # Clent
-npm install
+npm install,
 npm run dev
 
 # Sever
-npm install
+npm install, 
 npm run dev
