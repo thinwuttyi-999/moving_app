@@ -13,10 +13,10 @@ Express,
 MySQL
 
 # How To Run
-# Clent
+# Client
 npm install,
 npm run dev
 
-# Sever
+# Server
 npm install, 
 npm run dev
