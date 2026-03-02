@@ -8,3 +8,5 @@ moving_api/dist/
 
 # Env files
 *.env
+
+.vscode/
