@@ -1,0 +1,52 @@
+datasource db {
+  provider = "mysql"
+  url      = "mysql://root:@127.0.0.1:3306/api_movie" // Prisma 6 allowed
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id        Int     @id @default(autoincrement())
+  name      String
+  username  String  @unique
+  email     String  @unique
+  password  String  
+  isAdmin   Boolean @default(false)
+  createdAt DateTime @default(now())
+}
+
+enum MovieType {
+  MOVIE
+  SERIES
+  GL
+  BL
+}
+
+model Movie {
+  id        Int       @id @default(autoincrement())
+  title     String
+  type      MovieType 
+  poster    String
+  createdAt DateTime  @default(now())
+  
+  countryId Int
+  country   Country   @relation(fields: [countryId],references: [id])
+  detail    MovieDetail? 
+}
+
+model Country {
+  id            Int     @id   @default(autoincrement())
+  countryName   String  @unique
+  movies        Movie[]
+}
+
+model MovieDetail {
+  movieId       Int       @id
+  description   String
+  videoUrl      String
+  downloadLink  String
+  
+  movie         Movie     @relation(fields: [movieId], references: [id])
+}
